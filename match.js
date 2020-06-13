@@ -18,8 +18,10 @@ function findMatching(labelNames, allowedLabels, isMultipleAllowed) {
     isMultipleAllowed ? matchingLabels.length < 1 : matchingLabels.length !== 1
   ) {
     const quantifier = isMultipleAllowed ? 'at least' : 'exactly'
+    const labels = labelNames.join(',')
+    const mattilabels = matchingLabels.join(',')
     throw new Error(
-      `Could not find ${quantifier} one of the appropriate labels on the PR. ${labelNames} / ${matchingLabels}`
+      `Could not find ${quantifier} one of the appropriate labels on the PR. ${labels} / ${mattilabels}`
     )
   }
 
