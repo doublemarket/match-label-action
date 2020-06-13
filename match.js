@@ -19,7 +19,7 @@ function findMatching(labelNames, allowedLabels, isMultipleAllowed) {
   ) {
     const quantifier = isMultipleAllowed ? 'at least' : 'exactly'
     throw new Error(
-      `Could not find ${quantifier} one of the appropriate labels on the PR.`
+      `Could not find ${quantifier} one of the appropriate labels on the PR. ${labelNames} / ${matchingLabels}`
     )
   }
 
